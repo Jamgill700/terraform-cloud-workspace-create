@@ -1,4 +1,4 @@
-data "azure_client_config" "current" {}
+data "azurerm_client_config" "current" {}
 data "azuread_client_config" "subscription" {}
 
 provider "azurerm" {
@@ -11,7 +11,7 @@ provider "tfe" {
 }
 
 provider "azuread" {
-  tenant_id     = data.azure_client_config.current
+  tenant_id     = data.azurerm_client_config.current
   client_id     = data.azuread_application.app_permissions.client_id
   client_secret = var.oidc_client_secret
 }
