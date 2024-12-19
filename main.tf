@@ -43,10 +43,10 @@ resource "tfe_variable" "azure_auth" {
 
 
 # individual workspace variable
-resource "tfe_variable" "tfc_azure_client_id" {
-  description  = "The Azure Client ID the workspace will use to authenticate with Azure."
-  workspace_id = tfe_workspace.ws_creator.id
-  key          = "TFC_AZURE_RUN_CLIENT_ID"
-  value        = azuread_application.ws_creator.client_id
-  category     = "env"
-}
+# resource "tfe_variable" "tfc_azure_client_id" {
+#   description  = "The Azure Client ID the workspace will use to authenticate with Azure."
+#   workspace_id = tfe_workspace.ws_creator.id
+#   key          = "TFC_AZURE_RUN_CLIENT_ID"
+#   value        = azuread_application.ws_creator.client_id
+#   category     = "env"
+# }
