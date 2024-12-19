@@ -11,7 +11,7 @@ provider "tfe" {
 }
 
 provider "azuread" {
-  tenant_id     = data.azurerm_client_config.current
+  tenant_id     = var.tenant_id
   client_id     = data.azuread_application.app_permissions.client_id
   client_secret = var.oidc_client_secret
 }

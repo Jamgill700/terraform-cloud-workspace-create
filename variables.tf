@@ -24,3 +24,8 @@ variable "tfc_hostname" {
   type        = string
   default     = "app.terraform.io"
 }
+
+variable "tenant_id" {
+  description = "The Azure tenant ID"
+  type        = string
+}
