@@ -1,10 +1,10 @@
-data "azuread_application" "app_permissions" {
-  display_name = "jg-sp-001"
-}
+# data "azuread_application" "app_permissions" {
+#   display_name = "jg-sp-001"
+# }
 
-output "jg_sp_001_app_obj_id" {
-  value = data.azuread_application.app_permissions.client_id
-}
+# output "jg_sp_001_app_obj_id" {
+#   value = data.azuread_application.app_permissions.client_id
+# }
 
 # resource "azuread_application" "ws_creator" {
 #   display_name = "ws-creator"
