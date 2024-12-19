@@ -15,14 +15,19 @@
 #   tag_names    = ["modules", ]
 # }
 
-resource "tfe_workspace" "ws_creator" {
+# resource "tfe_workspace" "ws_creator" {
+#   name         = "terraform-cloud-workspace-create"
+#   organization = var.tfc_org
+#   tag_names    = ["workspaces", ]
+# }
+
+data "tfe_workspace" "ws_creator" {
   name         = "terraform-cloud-workspace-create"
   organization = var.tfc_org
-  tag_names    = ["workspaces", ]
 }
 
 output "workspace_id" {
-  value = tfe_workspace.ws_creator.id
+  value = data.tfe_workspace.ws_creator.id
 }
 
 # variable set
