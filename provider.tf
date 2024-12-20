@@ -4,6 +4,7 @@ data "azurerm_subscription" "current" {}
 provider "azurerm" {
   features {}
   subscription_id = var.sub_id
+  use_oidc        = true
 }
 
 provider "tfe" {
