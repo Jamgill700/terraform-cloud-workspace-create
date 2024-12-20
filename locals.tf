@@ -17,7 +17,11 @@ locals {
     },
     oidc_client_secret = {
       value = var.oidc_client_secret
+    },
+    tenant_id = {
+      value = var.tenant_id
     }
+
 
   }
 
