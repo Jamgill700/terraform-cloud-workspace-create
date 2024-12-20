@@ -40,6 +40,6 @@ resource "tfe_variable" "tfc_azure_client_id" {
 #   workspace_id = tfe_workspace.ws_creator.id
 #   key          = each.key
 #   value        = each.value.value
-#   category     = "terraform"
+#   category     = try(each.value.category, "terraform")
 #   sensitive    = true
 # }
