@@ -35,11 +35,11 @@ resource "tfe_variable" "tfc_azure_client_id" {
   category     = "env"
 }
 
-# resource "tfe_variable" "env_vars" {
-#   for_each     = local.variable_set
-#   workspace_id = tfe_workspace.ws_creator.id
-#   key          = each.value.key
-#   value        = each.value.value
-#   category     = "env"
-#   sensitive    = true
-# }
+resource "tfe_variable" "env_vars" {
+  for_each     = local.variable_set
+  workspace_id = tfe_workspace.ws_creator.id
+  key          = each.key
+  value        = each.value.value
+  category     = "env"
+  sensitive    = true
+}
