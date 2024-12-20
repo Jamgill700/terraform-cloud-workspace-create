@@ -40,6 +40,6 @@ resource "tfe_variable" "env_vars" {
   workspace_id = tfe_workspace.ws_creator.id
   key          = each.key
   value        = each.value.value
-  category     = "env"
+  category     = "terraform"
   sensitive    = true
 }
