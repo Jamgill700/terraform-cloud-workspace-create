@@ -1,5 +1,5 @@
 data "azurerm_client_config" "current" {}
-data "azuread_client_config" "subscription" {}
+data "azurerm_subscription" "current" {}
 
 provider "azurerm" {
   features {}
@@ -11,7 +11,7 @@ provider "tfe" {
 }
 
 provider "azuread" {
-  tenant_id     = data.azurerm_client_config.current
-  client_id     = data.azuread_application.app_permissions.client_id
+  tenant_id     = data.azurerm_client_config.current.tenant_id
+  client_id     = var.oidc_client_id
   client_secret = var.oidc_client_secret
 }

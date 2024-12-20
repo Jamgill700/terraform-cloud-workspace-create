@@ -3,4 +3,6 @@ Create terraform cloud workspaces
 
 
 Setup client id
-Need to create original workspace and add oidc variable secret
+Setup locally first.
+created the ws-creator application and federated creds first
+created the tfe workspace
