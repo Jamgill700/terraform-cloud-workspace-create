@@ -8,6 +8,7 @@ resource "tfe_project" "ws_creator" {
 resource "tfe_workspace" "ws_creator" {
   name         = var.tfc_workspace_name
   organization = var.tfc_organization_name
+  project_id   = tfe_project.ws_creator.id
   vcs_repo {
     identifier     = var.vcs_repo_id
     branch         = var.vcs_branch

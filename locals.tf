@@ -13,12 +13,10 @@ locals {
     tfc_workspace_name    = { value = var.tfc_workspace_name },
     vcs_oauth_token_id    = { value = var.vcs_oauth_token_id },
     oidc_client_id = {
-      value    = var.oidc_client_id
-      category = "env"
+      value = var.oidc_client_id
     },
     oidc_client_secret = {
-      value    = var.oidc_client_secret
-      category = "env"
+      value = var.oidc_client_secret
     }
 
   }
