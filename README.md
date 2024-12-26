@@ -1,6 +1,7 @@
 # terraform-cloud-workspace-create
 Create terraform cloud workspaces
 
+The code is saved in GitHub repo but it runs locally
 
 Setup client id
 Setup locally first.

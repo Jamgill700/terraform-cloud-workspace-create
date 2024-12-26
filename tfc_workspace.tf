@@ -9,11 +9,11 @@ resource "tfe_workspace" "ws_creator" {
   name         = var.tfc_workspace_name
   organization = var.tfc_organization_name
   project_id   = tfe_project.ws_creator.id
-  vcs_repo {
-    identifier     = var.vcs_repo_id
-    branch         = var.vcs_branch
-    oauth_token_id = tfe_oauth_client.ws_creator.oauth_token_id
-  }
+  # vcs_repo {
+  #   identifier     = var.vcs_repo_id
+  #   branch         = var.vcs_branch
+  #   oauth_token_id = tfe_oauth_client.ws_creator.oauth_token_id
+  # }
 }
 
 # workspace settings
@@ -36,11 +36,11 @@ resource "tfe_variable" "tfc_azure_client_id" {
   category     = "env"
 }
 
-# resource "tfe_variable" "env_vars" {
-#   for_each     = local.variable_set
-#   workspace_id = tfe_workspace.ws_creator.id
-#   key          = each.key
-#   value        = each.value.value
-#   category     = try(each.value.category, "terraform")
-#   sensitive    = true
-# }
+resource "tfe_variable" "env_vars" {
+  for_each     = local.variable_set
+  workspace_id = tfe_workspace.ws_creator.id
+  key          = each.key
+  value        = each.value.value
+  category     = try(each.value.category, "terraform")
+  sensitive    = true
+}
