@@ -57,8 +57,3 @@ variable "vcs_oauth_token_id" {
   type        = string
   sensitive   = true
 }
-
-variable "tenant_id" {
-  description = "Azure tenant ID"
-  type        = string
-}
